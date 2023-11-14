@@ -6,13 +6,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Mi PWA">
-    <title>EXAMPLE PWA</title>
+  <meta name="apple-mobile-web-app-title" content="MODEL">
+    <title>MODELO DE PREVENCION</title>
     <link rel="manifest" href="./manifest.json" />
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+
+    <style>
+      /* Estilos básicos */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  header {
+    color: #ffffff;
+    text-align: center;
+    height: 300px;
+    position: relative;
+  }
+  img{
+    height: 100%;
+    width: 100%;
+  }
+  .content_img{
+    width: 100%;
+    height: 100%;
+  }
+  main {
+    padding: 20px;
+  }
+  
+  /* Estilos para los consejos */
+  #consejos {
+    margin-top: 20px;
+  }
+  
+  .consejo {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: #000000 4px 4px 5px; 
+    width: 100%;
+    background: rgba(14, 69, 128, 0.405);
+    padding: 10px;
+  }
+  
+    </style>
   </head>
   <body>
-    <h1>Service worker</h1>
+    <header>
+      <h1>MODELO DE PREVENCION DE ASALTO</h1>
+      <div class="content_img"><img src="./images/icons/fondo.jpg" alt=""></div>
+    </header>
+    <main>
+      <p><b>PERMITIR EL ENVIO DE NOTIFICACIONES</b></p>
+      <section id="consejos">
+        <!-- Aquí se mostrarán los consejos -->
+      </section>
+    </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    // Datos de ejemplo: consejos de seguridad
+    const consejos = [
+      "Al permitir el envio de notificaciones se mantendra alerta de los acontesimientos.",
+      "Mantén tu software actualizado para protegerte de vulnerabilidades.",
+      "Evita hacer clic en enlaces o archivos adjuntos sospechosos en correos electrónicos.",
+      "Configuramos nuestras notificaciones para evitar generar pánico innecesario, priorizando la entrega de alertas solo cuando se confirma un riesgo real.",
+      "Realiza copias de seguridad periódicas de tus datos importantes.",
+      "Ten cuidado con la información que compartes en redes sociales."
+    ];
+  
+    const consejosContainer = document.getElementById('consejos');
+  
+    // Mostrar los consejos en la página
+    consejos.forEach(consejo => {
+      const consejoElement = document.createElement('div');
+      consejoElement.classList.add('consejo');
+      consejoElement.textContent = consejo;
+      consejosContainer.appendChild(consejoElement);
+    });
+  });
+  
+    </script>
     <script>
       const beamsClient = new PusherPushNotifications.Client({
         instanceId: 'b17646f6-89ff-4959-83cd-ec8e141b6afc',
