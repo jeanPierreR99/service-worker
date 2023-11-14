@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Mi PWA">
+    <title>EXAMPLE PWA</title>
+    <link rel="manifest" href="./manifest.json" />
+    <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+  </head>
+  <body>
+    <h1>Service worker</h1>
+    <script>
+      const beamsClient = new PusherPushNotifications.Client({
+        instanceId: 'b17646f6-89ff-4959-83cd-ec8e141b6afc',
+      });
+    
+      beamsClient.start()
+        .then(() => beamsClient.addDeviceInterest('hello'))
+        .then(() => console.log('Successfully registered and subscribed!'))
+        .catch(console.error);
+    </script>
+  </body>
+</html>
